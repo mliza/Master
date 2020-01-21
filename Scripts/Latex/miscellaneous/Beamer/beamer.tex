@@ -1,0 +1,144 @@
+\documentclass{beamer} %for presentation
+
+%Uncoment  for printing 
+%\documentclass[handout]{beamer} %needed to create handouts 
+%\usepackage{pgfpages} %needed to print more than 1 slide per page 
+%\pgfpagesuselayout{4 on 1}[a4paper, border shrink=5mm, landscape] %printing paper size and border 
+
+
+\usetheme{UoA}  %http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html
+%\usecolortheme{crane} %change default theme color
+%\useinnertheme{rectangles} %change default itemize for squares 
+%\usefonttheme{serif} %change default font theme
+
+%My Info
+\title{My Title} 
+\subtitle{My Subtitle}
+\author{Martin E. Liza} 
+\institute{University of Arizona} 
+\date{\today} 
+\begin{document}
+
+
+
+\begin{frame} 
+	\titlepage 
+\end{frame} 
+
+\begin{frame}
+	\frametitle{Table of Contents} 
+	\tableofcontents
+	\label{contents} 
+\end{frame}
+
+
+\section{Section 1}
+\subsection{a}
+\begin{frame}
+\frametitle{My Frame Title 1} 
+	My text goes here 
+\end{frame}
+
+
+\section{Section 2}
+\subsection{b} 
+\begin{frame}
+\frametitle{My Frame Title 2}
+	\begin{enumerate}[(I)]
+	\item Item 1 
+	\item Item 2
+	\item Item 3
+		\begin{itemize}
+		\item Item 3a
+		\item Item 3b
+		\end{itemize} 	
+	\item Item 4
+	\end{enumerate}
+\end{frame}
+
+\subsection{c} 
+\begin{frame}
+\frametitle{My Frame Title 3} 
+	\begin{columns}
+	\column{0.5\textwidth} 
+	Text goes here
+	\column{0.5\textwidth} 
+	Text goes here 
+	\end{columns}	
+\end{frame}
+
+\subsection{d} 
+\begin{frame}
+\frametitle{My Frame Title 4} 
+	\begin{columns}
+	\column{0.5\textwidth} 
+	 Text goes here
+	\column{0.5\textwidth} 
+	\centering
+	\includegraphics[scale=.3]{git.png}
+	\end{columns}	
+\end{frame}
+
+\subsection{d} 
+\begin{frame}
+\frametitle{My Frame Title 5}
+	\begin{figure}
+	\includegraphics[scale=.4]{git.png}
+	\caption{Figure Caption}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\begin{description}
+	\item[API] Application Programming Interface
+	\item[LAN] Local Area Network
+	\item[ASCII] American Standard Code for Information Interchange
+	\end{description}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Block Title}
+	This is my Block
+	\end{block}
+	\begin{alertblock}{Red Block}
+	Info Here
+	\end{alertblock} 
+	\begin{definition}
+	remember 
+	\end{definition}
+	\begin{example}
+	example do not forget 
+	\end{example}
+\end{frame}
+
+\begin{frame}
+	\begin{theorem}[Pythagoras] 
+	$ a^2 + b^2 = c^2$
+	\end{theorem}
+	\begin{corollary}
+	$ x + y = y + x  $
+	\end{corollary}
+	\begin{proof}
+	$\omega +\phi = \epsilon $
+	\end{proof} 
+\end{frame} 
+
+\begin{frame}[fragile] %this is for adding code
+	\begin{semiverbatim}
+	\\begin\{frame\}
+	\\frametitle\{Outline\}
+	\\tableofcontents
+	\#include <iostream>
+	\\end\{frame\}
+	\end{semiverbatim}
+add a hyperlink 
+\hyperlink{contents}{click here}
+\hyperlink{contents}{\beamerbutton{contents page}}
+\hyperlink{columns}{\beamergotobutton{columns page}}
+\hyperlink{pictures}{\beamerskipbutton{pictures page}} 
+\hyperlink{pictures}{\beamerreturnbutton{pictures page}}
+\end{frame}
+
+
+
+\end{document}

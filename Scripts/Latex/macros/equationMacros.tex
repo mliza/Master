@@ -1,0 +1,50 @@
+% Continuity Eq. 
+\newcommand{\continuityEqVec}
+{   \dot{\rho} + \nabla \cdot \B( \rho \bm{V} \E) = 0   }
+
+
+% Incompressible Navier Stokes Eq. - Einstein's notation  
+\newcommand{\incompressibleNavierStokesEins}
+{   \rho\B[ \Sub{\dot{V}}{k} + \Sub{V}{i}\Partial{j}\Sub{V}{k}\Sub{\delta}{ij} \E] = -\Partial{k}P + \mu\UpSub{\partial}{j}{2}\Sub{V}{k} + \Sub{f}{k}   }
+
+
+% Incompressible Navier Stokes Eq. - Vector notation  
+\newcommand{\incompressibleNavierStokesVec} 
+{   \rho\B[ \dot{\bm{V}} + \B(\bm{V}\cdot\nabla\E)\bm{V} \E] = -\nabla \bm{P} + \mu \Up{\nabla}{2}\bm{V} + \Sub{\bm{F}}{e}    }
+
+
+% Material Derivative Eq. - Vector notation 
+\newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
+{   \frac{D}{Dt}\B(#1\E) = \frac{\partial}{\partial t}\B(#1\E) + \B[\bm{V}\cdot\nabla\E]\B(#1\E)   }
+
+
+% Dot Product - Einstein's notation 
+\newcommand{\dotEins}[4] %\dotEins{A}{i}{B}{j} 
+{   \Sub{#1}{#2}\Sub{#3}{#4}\Sub{\delta}{#2#4}  }
+
+
+% Cross Product - Einstein's notation 
+\newcommand{\crossEins}[5] %\crossEins{ijk}{A}{i}{B}{k}  
+{   \Sub{\varepsilon}{#1}\Sub{#2}{#3}\Sub{#4}{#5}   }
+
+% Stokes Theorem 
+\newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
+{   \Sub{\oint}{C}\bm{#1}\cdot d\bm{r} = \iint\B(\nabla\times\bm{#1}\E)\cdot\hat{\bm{n}}\,dS   }
+
+% Divergence Theorem 
+\newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
+{   \Sub{\iiint}{V}\B(\nabla\cdot\bm{#1}\E)dV = \Sub{\oiint}{S}\B(\bm{#1}\cdot\hat{\bm{n}}\E)dS   } 
+
+% Taylor Series 
+\newcommand{\taylorSeries} 
+{   \sum_{n=1}^{\infty}\frac{f^{(n)}(a)}{n!}\B(x-a\E)   }
+
+% Maxwell Equations - Differential notation 
+\newcommand{\maxwellEqA}
+{   \nabla\cdot\bm{E}  = \frac{\rho}{\Sub{\varepsilon}{0}}  } 
+\newcommand{\maxwellEqB} 
+{   \nabla\cdot\bm{B} = 0   } 
+\newcommand{\maxwellEqC} 
+{   \nabla\times\bm{E} = - \frac{\partial\bm{B}}{\partial t}    }
+\newcommand{\maxwellEqD} 
+{   \nabla\times\bm{B} = \Sub{\mu}{0}\bm{j} + \frac{1}{\Up{c}{2}}\frac{\partial\bm{E}}{\partial t}  }
