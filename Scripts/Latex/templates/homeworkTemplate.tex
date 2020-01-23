@@ -23,7 +23,7 @@
 \usepackage{lastpage} %footage
 \usepackage{blindtext} %headers
 \usepackage[toc,page]{appendix} %appendix
-\usepackage[hidelinks]{hyperref} %hyper link references
+\usepackage{hyperref} %hyper link references
 \usepackage{esint,relsize} %mathlarge
 \usepackage{comment} %comment out
 \usepackage{pdfpages} %insert PDF files 
@@ -40,6 +40,12 @@
 \ohead{#3}  %right
  }
 \ofoot{Page \textbf{\thepage} of \textbf{\pageref{LastPage}}} %page numbers 
+
+%Modify clickable links color 
+\hypersetup{ colorlinks=true,           %active color links 
+             urlcolor=blue             %url link color 
+           }
+            
 
 %New Commands Text
 \newcommand{\MyName}{My Name}   %my name
