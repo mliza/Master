@@ -12,6 +12,9 @@
 \newcommand{\incompressibleNavierStokesVec} 
 {   \rho\B[ \dot{\bm{V}} + \B(\bm{V}\cdot\nabla\E)\bm{V} \E] = -\nabla \bm{P} + \mu \Up{\nabla}{2}\bm{V} + \Sub{\bm{F}}{e}    }
 
+% Non-dimensional Navier Stokes Eq. 
+\newcommand{\nonDimensionalNavierStokes} 
+{   \B[St\E]\frac{\partial\bm{V^*}}{\partial t^*} + \Parenthesis{\bm{V^*}\bm{\cdot}\nabla^*}\bm{V^*} =  -\B[Eu\E]\nabla^*P^* + \B[\frac{1}{Re}\E]\nabla^{*2}\bm{V^*} + \B[\frac{1}{Fr^2}\E]\bm{g^*} }
 
 % Material Derivative Eq. - Vector notation 
 \newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
@@ -24,23 +27,28 @@
 
 % Quadratic equation 
 \newcommand{\quadratic}[3] %\quadratic{a}{b}{c} 
-{   \frac{  #2 \pm \sqrt{ #2^2 - 4#1 #3 } }{2#1} }
+{   \frac{  -(#2) \pm \sqrt{ (#2)^2 - 4(#1) (#3) } }{2(#1)} }
+
 
 % Cross Product - Einstein's notation 
 \newcommand{\crossEins}[5] %\crossEins{ijk}{A}{i}{B}{k}  
 {   \Sub{\varepsilon}{#1}\Sub{#2}{#3}\Sub{#4}{#5}   }
 
+
 % Stokes Theorem 
 \newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
 {   \Sub{\oint}{C}\bm{#1}\cdot d\bm{r} = \iint\B(\nabla\times\bm{#1}\E)\cdot\hat{\bm{n}}\,dS   }
+
 
 % Divergence Theorem 
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
 {   \Sub{\iiint}{V}\B(\nabla\cdot\bm{#1}\E)dV = \Sub{\oiint}{S}\B(\bm{#1}\cdot\hat{\bm{n}}\E)dS   } 
 
+
 % Taylor Series 
 \newcommand{\taylorSeries} 
 {   \sum_{n=1}^{\infty}\frac{f^{(n)}(a)}{n!}\B(x-a\E)   }
+
 
 % Maxwell Equations - Differential notation 
 \newcommand{\maxwellEqA}
