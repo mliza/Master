@@ -100,7 +100,7 @@ def writeUp(args, preamble, body, paths):
         f = open(classPath, 'w')
         f.write('\chapter{Class Title}\n\section{section one}')
         f.close() 
-    shellCMD = f'open {filePath}'
+    shellCMD = f'vim {filePath}'
     subprocess.call([shellCMD], shell=True) 
 
 
