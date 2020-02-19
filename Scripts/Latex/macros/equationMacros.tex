@@ -51,8 +51,11 @@
 
 % Shear Strain Tensor 
 \newcommand{\shearStrainTensor}
-{ \Sub{\varepsilon}{ij} = \Partial{i}\Sub{V}{j}\Sub{\delta}{ij} + \frac{1}{2}\Parenthesis{\Partial{i}\Sub{V}{j} + \Partial{j}\Sub{V}{i}}\Parenthesis{1-\Sub{\delta}{ij}} }
+{ \Sub{\varepsilon}{ij} = \frac{1}{2}\Parenthesis{\Partial{i}\Sub{V}{j} + \Partial{j}\Sub{V}{i}} }
 
+% Total Stress Tensor 
+\newcommand{\totalStressTensor} 
+{ \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\varepsilon}{ij} }
 
 % Maxwell Equations - Differential notation 
 \newcommand{\maxwellEqA}
