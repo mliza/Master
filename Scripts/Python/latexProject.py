@@ -10,6 +10,7 @@
     -notes    = class notes project  
     -homework = homework project 
     -beamer   = beamer presentation project 
+    -cheat    = cheat sheet project 
 
     ex: ./latexPoject.py 'projectFolderName' 'mainFileName'
 
@@ -18,6 +19,7 @@
     --------------------------------------------------
     Martin E. Liza     10/20/2019     Initial Version  
     Martin E. Liza     10/22/2019     Implemented Dictionaries in the code 
+    Martin E. Liza     02/27/2020     Added cheat sheet option
 """ 
 import os
 import subprocess 
@@ -34,6 +36,8 @@ def argOptions():
                  help='homework project')
     parser.add_argument('-beamer', action='store_true',
                  help='beamer presentation project')
+    parser.add_argument('-cheat', action='store_true',
+                 help='cheat sheet project')
     # Add project arguments  
     parser.add_argument('flags', nargs='*')
     args = parser.parse_args() 
@@ -60,7 +64,7 @@ def preambleStr(args, paths):
        macros[macroName] = os.path.join(paths['macros'], macroName) 
 
     templates = {}
-    for tempName in ['notesTemplate', 'homeworkTemplate', 'beamerTemplate']:
+    for tempName in ['notesTemplate', 'homeworkTemplate', 'beamerTemplate', 'cheatTemplate']:
         templates[tempName] = os.path.join(paths['templates'], tempName) 
 
     if args.notes: 
@@ -76,6 +80,14 @@ def preambleStr(args, paths):
     if args.beamer: 
         preamble = f'\input{{{templates["beamerTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n\input{{{macros["beamerMacros"]}}}'
         body = '\n\n\\begin{document}\n\n\end{document}' 
+
+    if args.cheat: 
+        header = '\\title{Class Name}'   
+        multicol = '\t\\begin{multicols}{3}\n\t\setlength{\premulticols}{1pt}\n\t\setlength{\postmulticols}{1pt}\n\t\setlength{\multicolsep}{1pt}\n\t\setlength{\columnsep}{2pt}\n\n\n\t\end{multicols}'
+        preamble = f'\input{{{templates["cheatTemplate"]}}}\n\input{{{macros["equationMacros"]}}}\n\input{{{macros["mathMacros"]}}}\n{header}'
+        body1 = '\n\n\\begin{document}\n\t\\raggedright\n\t\\footnotesize\n\t\\begin{center}\n\t\t\Large{\\textbf{}}\n\t\end{center}'  
+        end = '\end{document}'
+        body = f'{body1}\n\n{multicol}\n{end}'
 
     return preamble, body  
 
