@@ -12,6 +12,12 @@
 \newcommand{\incompressibleNavierStokesVec} 
 {   \rho\B[ \dot{\bm{V}} + \B(\bm{V}\cdot\nabla\E)\bm{V} \E] = -\nabla \bm{P} + \mu \Up{\nabla}{2}\bm{V} + \Sub{\bm{F}}{e}    }
 
+
+% Incompressible Navier Stokes Eq - Vector Expanded 
+\newcommand{\incompressibleNavierStokesExpanded}[2]
+{ \rho\SqBracket{ \dot{#1} + u\PartialFrac{#1}{x} + v\PartialFrac{#1}{y} + w\PartialFrac{#1}{z} } = -\PartialFrac{P}{#2} + \mu\SqBracket{ \PartialFrac{^2#1}{x^2} + \PartialFrac{^2#1}{y^2} + \PartialFrac{^2#1}{z^2} } + \Sub{f}{#2} }
+
+
 % Non-dimensional Navier Stokes Eq. 
 \newcommand{\nonDimensionalNavierStokes} 
 {   \B[St\E]\frac{\partial\bm{V^*}}{\partial t^*} + \Parenthesis{\bm{V^*}\bm{\cdot}\nabla^*}\bm{V^*} =  -\B[Eu\E]\nabla^*P^* + \B[\frac{1}{Re}\E]\nabla^{*2}\bm{V^*} + \B[\frac{1}{Fr^2}\E]\bm{g^*} }
