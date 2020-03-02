@@ -4,22 +4,19 @@
 
 % Continuity Eq. Cylindrical corodinates 
 \newcommand{\continuityCylindrical} 
-{ \dot{\rho} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho r\Sub{V}{r}}}{r} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho\Sub{V}{\theta}}}{\theta} + \PartialFrac{\Parenthesis{\rho\Sub{V}{z}}}{z} }
+{ \dot{\rho} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho r\Sub{v}{r}}}{r} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho\Sub{v}{\theta}}}{\theta} + \PartialFrac{\Parenthesis{\rho\Sub{v}{z}}}{z} }
 
 % Incompressible Navier Stokes Eq. - Einstein's notation  
 \newcommand{\incompressibleNavierStokesEins}
 {   \rho\B[ \Sub{\dot{V}}{k} + \Sub{V}{i}\Partial{j}\Sub{V}{k}\Sub{\delta}{ij} \E] = -\Partial{k}P + \mu\UpSub{\partial}{j}{2}\Sub{V}{k} + \Sub{f}{k}   }
 
-
 % Incompressible Navier Stokes Eq. - Vector notation  
 \newcommand{\incompressibleNavierStokesVec} 
 {   \rho\B[ \dot{\bm{V}} + \B(\bm{V}\cdot\nabla\E)\bm{V} \E] = -\nabla \bm{P} + \mu \Up{\nabla}{2}\bm{V} + \Sub{\bm{F}}{e}    }
 
-
 % Incompressible Navier Stokes Eq - Vector Expanded 
 \newcommand{\incompressibleNavierStokesExpanded}[2]
 { \rho\SqBracket{ \dot{#1} + u\PartialFrac{#1}{x} + v\PartialFrac{#1}{y} + w\PartialFrac{#1}{z} } = -\PartialFrac{P}{#2} + \mu\SqBracket{ \PartialFrac{^2#1}{x^2} + \PartialFrac{^2#1}{y^2} + \PartialFrac{^2#1}{z^2} } + \Sub{f}{#2} }
-
 
 % Non-dimensional Navier Stokes Eq. 
 \newcommand{\nonDimensionalNavierStokes} 
@@ -29,7 +26,6 @@
 \newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
 {   \frac{D}{Dt}\B(#1\E) = \frac{\partial}{\partial t}\B(#1\E) + \B[\bm{V}\cdot\nabla\E]\B(#1\E)   }
 
-
 % Dot Product - Einstein's notation 
 \newcommand{\dotEins}[4] %\dotEins{A}{i}{B}{j} 
 {   \Sub{#1}{#2}\Sub{#3}{#4}\Sub{\delta}{#2#4}  }
@@ -38,16 +34,13 @@
 \newcommand{\quadratic}[3] %\quadratic{a}{b}{c} 
 {   \frac{  -(#2) \pm \sqrt{ (#2)^2 - 4(#1) (#3) } }{2(#1)} }
 
-
 % Cross Product - Einstein's notation 
 \newcommand{\crossEins}[5] %\crossEins{ijk}{A}{i}{B}{k}  
 {   \Sub{\varepsilon}{#1}\Sub{#2}{#3}\Sub{#4}{#5}   }
 
-
 % Stokes Theorem 
 \newcommand{\stokesTheorem}[1] %\stokesTheorem{F} 
 {   \Sub{\oint}{C}\bm{#1}\cdot d\bm{r} = \iint\B(\nabla\times\bm{#1}\E)\cdot\hat{\bm{n}}\,dS   }
-
 
 % Divergence Theorem 
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
