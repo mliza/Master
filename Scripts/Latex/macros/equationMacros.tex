@@ -1,6 +1,6 @@
 % Continuity Eq. 
 \newcommand{\continuityEqVec}
-{   \dot{\rho} + \nabla \cdot \B( \rho \bm{V} \E) = 0   }
+{   \dot{\rho} + \nabla \cdot \B( \rho \bm{V} \E)   }
 
 % Continuity Eq. Cylindrical corodinates 
 \newcommand{\continuityCylindrical} 
@@ -14,9 +14,13 @@
 \newcommand{\incompressibleNavierStokesVec} 
 {   \rho\B[ \dot{\bm{V}} + \B(\bm{V}\cdot\nabla\E)\bm{V} \E] = -\nabla \bm{P} + \mu \Up{\nabla}{2}\bm{V} + \Sub{\bm{F}}{e}    }
 
-% Incompressible Navier Stokes Eq - Vector Expanded 
-\newcommand{\incompressibleNavierStokesExpanded}[2]
+% Incompressible Navier Stokes Eq - Vector Expanded
+\newcommand{\incompressibleNavierStokesExpanded}[2] %\incompressibleNavierStokesExpanded{u}{x}
 { \rho\SqBracket{ \dot{#1} + u\PartialFrac{#1}{x} + v\PartialFrac{#1}{y} + w\PartialFrac{#1}{z} } = -\PartialFrac{P}{#2} + \mu\SqBracket{ \PartialFrac{^2#1}{x^2} + \PartialFrac{^2#1}{y^2} + \PartialFrac{^2#1}{z^2} } + \Sub{f}{#2} }
+
+% Incompressible Navier Stokes Eq. - Cylindrical on theta direction 
+\newcommand{\incompressibleNavierStoksCylindricalTheta} 
+{ \rho\SqBracket{ \Sub{\dot{v}}{\theta} + \Sub{v}{r}\Partial{r}\Sub{v}{\theta} +  \frac{\Sub{v}{\theta}}{r}\Partial{\theta}\Sub{v}{\theta} + \frac{\Sub{v}{r}\Sub{v}{\theta}}{r} + \Sub{v}{z}\Partial{z}\Sub{v}{\theta} } = \Sub{B}{\theta} - \frac{\Partial{\theta}P}{r} + \frac{\mu}{r}\SqBracket{                  \Partial{r}\Parenthesis{r\Partial{r}\Sub{v}{\theta}} + \frac{\Partial{\theta}^2}{r}\Sub{v}{\theta} + \frac{2\Partial{\theta}}{r}\Sub{v}{r} +     r\Partial{z}^2\Sub{v}{\theta} - \frac{\Sub{v}{\theta}}{r} } }
 
 % Non-dimensional Navier Stokes Eq. 
 \newcommand{\nonDimensionalNavierStokes} 
