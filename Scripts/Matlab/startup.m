@@ -1,5 +1,5 @@
 format long g
-addpath(genpath('/Users/Martin/Documents/Documents/Scripts/'));
+addpath(genpath('/Users/Martin/Documents/Documents/gitRepo/Scripts/'));
 whitebg('black');
 set(groot, 'defaultLineLineWidth', 2.5);
 set(groot, 'DefaultAxesXGrid', 'on');

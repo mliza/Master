@@ -2,6 +2,10 @@
 \newcommand{\continuityEqVec}
 {   \dot{\rho} + \nabla \cdot \B( \rho \bm{V} \E)   }
 
+% Continuity Eq. Expanded 
+\newcommand{\continuityEqExpanded}
+{ \dot{\rho} + \PartialFrac{\Parenthesis{\rho u}}{x} + \PartialFrac{\Parenthesis{ \rho v}}{y} + \PartialFrac{\Parenthesis{\rho w}}{z} }
+
 % Continuity Eq. Cylindrical corodinates 
 \newcommand{\continuityCylindrical} 
 { \dot{\rho} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho r\Sub{v}{r}}}{r} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho\Sub{v}{\theta}}}{\theta} + \PartialFrac{\Parenthesis{\rho\Sub{v}{z}}}{z} }
