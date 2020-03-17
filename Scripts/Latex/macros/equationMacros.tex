@@ -63,6 +63,10 @@
 \newcommand{\shearStrainTensor}
 { \Sub{\varepsilon}{ij} = \frac{1}{2}\Parenthesis{\Partial{i}\Sub{V}{j} + \Partial{j}\Sub{V}{i}} }
 
+% Shear Stress Tensor 
+\newcommand{\shearStressTensor} 
+{ \Sub{\tau}{ij} = 2\mu\Parenthesis{ \Sub{\varepsilon}{ij} - \frac{1}{3} \Partial{i}\bm{V} \Sub{\delta}{ij} }} 
+
 % Total Stress Tensor 
 \newcommand{\totalStressTensor} 
 { \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\varepsilon}{ij} }
