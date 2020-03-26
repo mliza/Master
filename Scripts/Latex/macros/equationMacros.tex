@@ -2,11 +2,11 @@
 \newcommand{\continuityEqVec}
 {   \dot{\rho} + \nabla \cdot \B( \rho \bm{V} \E)   }
 
-% Continuity Eq. Expanded 
-\newcommand{\continuityEqExpanded}
+% Continuity Eq. - Cartesian coordinates  
+\newcommand{\continuityCartesian} %continuityEqExpanded (former name)
 { \dot{\rho} + \PartialFrac{\Parenthesis{\rho u}}{x} + \PartialFrac{\Parenthesis{ \rho v}}{y} + \PartialFrac{\Parenthesis{\rho w}}{z} }
 
-% Continuity Eq. Cylindrical corodinates 
+% Continuity Eq. - Cylindrical coordinates 
 \newcommand{\continuityCylindrical} 
 { \dot{\rho} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho r\Sub{v}{r}}}{r} + \frac{1}{r}\PartialFrac{\Parenthesis{\rho\Sub{v}{\theta}}}{\theta} + \PartialFrac{\Parenthesis{\rho\Sub{v}{z}}}{z} }
 
@@ -19,7 +19,7 @@
 {   \rho\B[ \dot{\bm{V}} + \B(\bm{V}\cdot\nabla\E)\bm{V} \E] = -\nabla \bm{P} + \mu \Up{\nabla}{2}\bm{V} + \Sub{\bm{F}}{e}    }
 
 % Incompressible Navier Stokes Eq - Vector Expanded
-\newcommand{\incompressibleNavierStokesExpanded}[2] %\incompressibleNavierStokesExpanded{u}{x}
+\newcommand{\incompressibleNavierStokesCartesian}[2] %\incompressibleNavierStokesExpanded %\incompressibleNavierStokesCartesian{u}{x}
 { \rho\SqBracket{ \dot{#1} + u\PartialFrac{#1}{x} + v\PartialFrac{#1}{y} + w\PartialFrac{#1}{z} } = -\PartialFrac{P}{#2} + \mu\SqBracket{ \PartialFrac{^2#1}{x^2} + \PartialFrac{^2#1}{y^2} + \PartialFrac{^2#1}{z^2} } + \Sub{f}{#2} }
 
 % Incompressible Navier Stokes Eq. - Cylindrical on theta direction 
@@ -37,6 +37,18 @@
 % Material Derivative Eq. - Vector notation 
 \newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
 {   \frac{D}{Dt}\B(#1\E) = \frac{\partial}{\partial t}\B(#1\E) + \B[\bm{V}\cdot\nabla\E]\B(#1\E)   }
+
+% Shear Strain Tensor 
+\newcommand{\shearStrainTensor}
+{ \Sub{\varepsilon}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{v}{i}}{\Sub{x}{j}} + \PartialFrac{\Sub{v}{j}}{\Sub{x}{i}} } }
+
+% Shear Stress Tensor, Stokes Hypothesis is assumed  
+\newcommand{\shearStressTensor} 
+{ \Sub{\tau}{ij} = 2\mu\SqBracket{ \Sub{\varepsilon}{ij} + \lambda \Parenthesis{ \PartialFrac{\Sub{v}{k}}{\Sub{x}{k}}  }\Sub{\delta}{ij} }} 
+
+% Total Stress Tensor (Cauchy Momentum Tensor) 
+\newcommand{\cauchyMomentumTensor} %totalStressTensor 
+{ \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
 
 % Dot Product - Einstein's notation 
 \newcommand{\dotEins}[4] %\dotEins{A}{i}{B}{j} 
@@ -58,22 +70,9 @@
 \newcommand{\divergenceTheorem}[1] %\divergenceTheorem{F}
 {   \Sub{\iiint}{V}\B(\nabla\cdot\bm{#1}\E)dV = \Sub{\oiint}{S}\B(\bm{#1}\cdot\hat{\bm{n}}\E)dS   } 
 
-
 % Taylor Series 
 \newcommand{\taylorSeries} 
 {   \sum_{n=1}^{\infty}\frac{f^{(n)}(a)}{n!}\B(x-a\E)^n   }
-
-% Shear Strain Tensor 
-\newcommand{\shearStrainTensor}
-{ \Sub{\varepsilon}{ij} = \frac{1}{2}\Parenthesis{ \PartialFrac{\Sub{v}{i}}{\Sub{x}{j}} + \PartialFrac{\Sub{v}{j}}{\Sub{x}{i}} } }
-
-% Shear Stress Tensor, Stokes Hypothesis is assumed  
-\newcommand{\shearStressTensor} 
-{ \Sub{\tau}{ij} = 2\mu\SqBracket{ \Sub{\varepsilon}{ij} + \lambda \Parenthesis{ \PartialFrac{\Sub{v}{k}}{\Sub{x}{k}}  }\Sub{\delta}{ij} }} 
-
-% Total Stress Tensor (Cauchy Momentum Tensor) 
-\newcommand{\totalStressTensor} 
-{ \Sub{\sigma}{ij} = -p\Sub{\delta}{ij} + \Sub{\tau}{ij} }
 
 % Maxwell Equations - Differential notation 
 \newcommand{\maxwellEqA}
