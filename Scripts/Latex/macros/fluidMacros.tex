@@ -10,6 +10,10 @@
 \newcommand{\continuityCylindrical} 
 { \dot{\rho} + \frac{1}{r}\PartialFrac{ }{r}\Parenthesis{ \rho r\Sub{v}{r} } + \frac{1}{r}\PartialFrac{ }{\theta}\Parenthesis{\rho\Sub{v}{\theta}} + \PartialFrac{ }{z}\Parenthesis{\rho\Sub{v}{z}} }
 
+% Continuity Eq. - Spherical coordinates 
+\newcommand{\continuitySpherical} 
+{ \dot{\rho} + \frac{1}{r^2}\PartialFrac{}{r}\Parenthesis{ \rho r^2\Sub{v}{r} } + \frac{1}{ r\sin(\theta) }\PartialFrac{}{\theta}\Parenthesis{ \rho\sin(\theta)\Sub{v}{\theta} } + \frac{1}{ r\sin(\theta) }\PartialFrac{}{\phi}\Parenthesis{ \rho\Sub{v}{\phi} } }
+
 % Incompressible Navier Stokes Eq. - Vector notation  
 \newcommand{\incompressibleNavierStokesVec} 
 {   \rho\Parenthesis{ \dot{V} + \Parenthesis{\vec{V}\cdot\nabla}V } = -\nabla P + \mu \Up{\nabla}{2}V + \Sub{f}{e}  }
