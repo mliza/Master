@@ -14,9 +14,13 @@
 \newcommand{\continuitySpherical} 
 { \dot{\rho} + \frac{1}{r^2}\PartialFrac{}{r}\Parenthesis{ \rho r^2\Sub{v}{r} } + \frac{1}{ r\sin(\theta) }\PartialFrac{}{\theta}\Parenthesis{ \rho\sin(\theta)\Sub{v}{\theta} } + \frac{1}{ r\sin(\theta) }\PartialFrac{}{\phi}\Parenthesis{ \rho\Sub{v}{\phi} } }
 
+% Incompressible Navier Stokes Eq - Material derivative 
+\newcommand{\incompressibleNavierStokesMaterial} 
+{ \rho\frac{D\vec{V}}{Dt} = -\nabla P + \mu \Up{\nabla}{2}V + \Sub{B}{f} }
+
 % Incompressible Navier Stokes Eq. - Vector notation  
 \newcommand{\incompressibleNavierStokesVec} 
-{   \rho\Parenthesis{ \dot{V} + \Parenthesis{\vec{V}\cdot\nabla}V } = -\nabla P + \mu \Up{\nabla}{2}V + \Sub{f}{e}  }
+{   \rho\Parenthesis{ \dot{V} + \Parenthesis{\vec{V}\cdot\nabla}V } = -\nabla P + \mu \Up{\nabla}{2}V + \Sub{B}{f}  }
 
 % Incompressible Navier Stokes Eq - Vector Expanded
 \newcommand{\incompressibleNavierStokesCartesian}[2] %\incompressibleNavierStokesExpanded %\incompressibleNavierStokesCartesian{u}{x}
@@ -36,7 +40,7 @@
 
 % Non-dimensional Navier Stokes Eq. 
 \newcommand{\nonDimensionalNavierStokes} 
-{\SqBracket{St}\PartialFrac{V^*}{t} + \Parenthesis{\vec{V}^*\cdot\nabla^* }V^* = -\SqBracket{Eu}\nabla^*P^*  +\SqBracket{\frac{1}{Re}}\nabla^{*^{2}}V^* + \SqBracket{\frac{1}{Fr^2}}g^* }
+{\SqBracket{St}\frac{D\vec{V}^*}{Dt^*} = -\SqBracket{Eu}\nabla^*P^*  +\SqBracket{\frac{1}{Re}}\nabla^{*^{2}}V^* + \SqBracket{\frac{1}{Fr^2}}g^* }
 
 % Material Derivative Eq. - Vector notation 
 \newcommand{\materialDerivativeVec}[1] %\materialDerivativeVec{\rho V}
